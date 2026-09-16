@@ -3,4 +3,5 @@ b = 5.5 #float
 c = "Hello" #string
 d = True #boolean
 
-newlist[5] = [1,2,3,4,5] #list
+newlist = [1,2,3,4,5] #list
+print(type(newlist))
