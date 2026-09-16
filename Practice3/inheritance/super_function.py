@@ -1,19 +1,14 @@
-"""Examples of calling a parent constructor with super()."""
+class Animal:
+    def __init__(self, species):
+        self.species = species
 
-
-class Person:
-    def __init__(self, name):
+class Dog(Animal):
+    def __init__(self, name, breed):
+        # Call Animal's __init__ to set species="Canine"
+        super().__init__(species="Canine") 
         self.name = name
+        self.breed = breed
 
-
-class Teacher(Person):
-    def __init__(self, name, subject):
-        super().__init__(name)
-        self.subject = subject
-
-    def introduce(self):
-        return f"{self.name} teaches {self.subject}."
-
-
-teacher = Teacher("Zhanar", "Mathematics")
-print(teacher.introduce())
+dog = Dog("Buddy", "Golden Retriever")
+print(dog.species)  # Output: Canine
+print(dog.name)     # Output: Buddy
