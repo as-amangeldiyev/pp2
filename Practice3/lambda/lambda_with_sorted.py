@@ -1,7 +1,6 @@
 """Examples of custom sorting with a lambda key."""
 
 
-# Here is a list of products sorted by the price stored in each dictionary.
 products = [
     {"name": "Notebook", "price": 850},
     {"name": "Pen", "price": 120},
