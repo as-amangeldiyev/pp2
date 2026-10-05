@@ -1,0 +1,22 @@
+                 GREEN MARKET
+             12 Abay Avenue, Almaty
+              Tel: +7 727 555 01 02
+
+Date: 05.10.2026
+Time: 14:32
+Receipt No: 004281
+Cashier: A. Sadykova
+
+PRODUCT                 QTY      PRICE
+Apples                   1 kg     850.00
+Milk 2.5%                2        620.00
+Whole grain bread        1        450.00
+Dark chocolate           1        790.00
+
+Subtotal:                         2,710.00 KZT
+Discount:                           200.00 KZT
+TOTAL:                            2,510.00 KZT
+
+Payment method: Card
+Card: **** **** **** 1842
+Thank you for shopping!
