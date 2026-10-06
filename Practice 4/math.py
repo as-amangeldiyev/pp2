@@ -1,19 +1,4 @@
-import importlib
-import os
-import sys
-
-
-def load_standard_math():
-    script_folder = os.path.dirname(os.path.abspath(__file__))
-    original_path = sys.path[:]
-    try:
-        sys.path[:] = [entry for entry in sys.path if os.path.abspath(entry or os.curdir) != script_folder]
-        return importlib.import_module("math")
-    finally:
-        sys.path[:] = original_path
-
-
-math = load_standard_math()
+import math
 import random
 
 
