@@ -33,6 +33,7 @@ def main():
         print(number)
 
     print("Generator function:", list(count_up(2, 6)))
+    
     # Generator expressions are lazy: values are calculated as they are read.
     squares = (number * number for number in range(1, 6))
     print("Generator expression:", list(squares))
