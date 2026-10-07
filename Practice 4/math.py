@@ -1,4 +1,5 @@
 import math
+import random
 
 # Convert degrees to radians.
 degrees = float(input("Input degree: "))
@@ -20,3 +21,12 @@ print("The area of the polygon is:", area)
 base = float(input("Length of base: "))
 height = float(input("Height of parallelogram: "))
 print("Parallelogram area:", base * height)
+
+# Generate a random integer, choose a random item, and shuffle a list.
+print("Random number:", random.randint(1, 100))
+
+choices = ["red", "green", "blue"]
+print("Random choice:", random.choice(choices))
+
+random.shuffle(choices)
+print("Shuffled choices:", choices)
