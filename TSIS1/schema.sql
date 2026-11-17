@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS contacts (
+ id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ first_name VARCHAR(100) NOT NULL CHECK (BTRIM(first_name) <> ''),
+ surname VARCHAR(100), email VARCHAR(100), birthday DATE,
+ group_id INTEGER REFERENCES contact_groups(id),
+ created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS contact_groups (
+ id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ name VARCHAR(50) UNIQUE NOT NULL
+);
+CREATE TABLE IF NOT EXISTS phones (
+ id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ contact_id BIGINT NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
+ phone VARCHAR(32) NOT NULL,
+ type VARCHAR(10) NOT NULL CHECK (type IN ('home','work','mobile')),
+ UNIQUE(contact_id, phone)
+);
+INSERT INTO contact_groups(name) VALUES ('Family'),('Work'),('Friend'),('Other') ON CONFLICT(name) DO NOTHING;
