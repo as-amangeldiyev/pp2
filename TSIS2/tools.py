@@ -11,7 +11,8 @@ def draw_shape(surface, tool, start, end, color, size):
     if tool == "line":
         pygame.draw.line(surface, color, start, end, size)
     elif tool == "rectangle":
-        rect = pygame.Rect(x1, y1, x2 - x1, y2 - y1).normalize()
+        rect = pygame.Rect(x1, y1, x2 - x1, y2 - y1)
+        rect.normalize()
         pygame.draw.rect(surface, color, rect, size)
     elif tool == "circle":
         radius = int(math.hypot(x2 - x1, y2 - y1))
@@ -20,7 +21,8 @@ def draw_shape(surface, tool, start, end, color, size):
         side = max(abs(x2 - x1), abs(y2 - y1))
         x2 = x1 + side * (1 if x2 >= x1 else -1)
         y2 = y1 + side * (1 if y2 >= y1 else -1)
-        rect = pygame.Rect(x1, y1, x2 - x1, y2 - y1).normalize()
+        rect = pygame.Rect(x1, y1, x2 - x1, y2 - y1)
+        rect.normalize()
         pygame.draw.rect(surface, color, rect, size)
     elif tool == "right triangle":
         pygame.draw.polygon(surface, color, [(x1, y1), (x2, y2), (x1, y2)], size)
